@@ -1,0 +1,24 @@
+<resources>
+    <string name="google_maps_key">AIzaSyDNGhtPTBGEQSUm78j-WPu3V8g9XRHb-oM</string>
+    <string name="app_name">Save Me</string>
+    <string name="openCamera">Открыть камеру</string>
+    <string name="exit">Уйти</string>
+    <string name="cancel">Отмена</string>
+    <string name="apply">Принять</string>
+    <string name="mail">Email</string>
+    <string name="password">Пароль</string>
+    <string name="login_text">Добро пожаловать</string>
+    <string name="registration">Стать одним из нас</string>
+    <string name="remember_me">Запомнить меня</string>
+    <string name="hint_name">Имя</string>
+    <string name="hint_nickname">Ник</string>
+    <string name="hint_password">Пароль</string>
+    <string name="hint_password_double">Повторите пароль</string>
+    <string name="hint_phone">Телефон</string>
+    <string name="hint_email">Почта</string>
+    <string name="autorization_icon">Иконка авторизации</string>
+    <string name="autorization_icon_kat">Кошка на кнопке</string>
+    <string name="photo">Photo</string>
+    <string name="location_on_photo">Ваше местоположение: </string>
+    <string name="do_information">Информировать уполномоченные органы</string>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/main_background</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/menu_background</item>
+        <item name="colorPrimaryDark">@color/main_background</item>
+        <item name="colorAccent">#EACCF4</item>
+        <item name="colorControlActivated">#EACCF4</item>
+    </style>
+</resources>
