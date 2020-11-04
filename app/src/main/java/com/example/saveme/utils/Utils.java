@@ -9,11 +9,6 @@ import java.util.regex.Pattern;
 public class Utils
 {
 
-    //общие константы для работы с preferences
-    public static final String KEY_FIRST_LAUNCH = "firstLaunch";
-    public static final String KEY_LOGIN = "login";
-    public static final String KEY_PASS = "pass";
-
     //константы для разрешений
     public static final int PERMISSION_INTERNET_RESULT = 0;
     public static final int PERMISSION_STORAGE_RESULT = 1;

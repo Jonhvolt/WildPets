@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.saveme.R;
 import com.example.saveme.presenter.LoginPresenter;
+import com.example.saveme.utils.PreferencesManager;
 import com.example.saveme.utils.Utils;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -33,13 +34,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-import static com.example.saveme.utils.Utils.KEY_FIRST_LAUNCH;
+import static com.example.saveme.utils.PreferencesManager.KEY_FIRST_LAUNCH;
 
 /**
- * Главное окно при входе в приложение
+ * Главное активити приложения
  */
 public class LoginActivity extends AppCompatActivity
 {
+    private final String TAG = LoginActivity.class.getName();
+
     private TextView email;
     private EditText password;
     private Button apply;
@@ -47,10 +50,9 @@ public class LoginActivity extends AppCompatActivity
     private LoginPresenter loginPresenter;
 
     private SharedPreferences preferences;
+
     private FirebaseAuth mAuth;
-
     private GoogleSignInOptions googleSignInOptions;
-
     private GoogleSignInClient mGoogleSignInClient;
 
     private static final int RC_SIGN_IN = 9001;
@@ -64,7 +66,7 @@ public class LoginActivity extends AppCompatActivity
                                                           | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                                                           | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                                                           | View.SYSTEM_UI_FLAG_FULLSCREEN);
-        preferences = getPreferences( MODE_PRIVATE );
+        preferences = PreferencesManager.getPreferences( this );
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -258,8 +260,8 @@ public class LoginActivity extends AppCompatActivity
         }
         else
         {
-            preferences.edit().putBoolean( KEY_FIRST_LAUNCH, false ).commit();
-            Log.i( this.getClass().getName(), "Был выполнен первый запуск приложения на этом устройстве. В preferences установлена эта информация "  );
+            PreferencesManager.getEditor( this ).putBoolean( KEY_FIRST_LAUNCH, false ).commit();
+            Log.i( TAG, "Первый запуск приложения. Обновление"  );
             return true;
         }
     }
